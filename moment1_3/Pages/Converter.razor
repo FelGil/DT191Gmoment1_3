@@ -1,0 +1,50 @@
+﻿@page "/Converter"
+
+<PageTitle>Konverterare</PageTitle>
+
+<h3>Konverterare</h3>
+
+<label>Konvertera meter till fot</label><br />
+<input type="number" @bind="convertDistance"/>
+<br /><br />
+<button @onclick="ConvertDistance">Konvertera meter till fot</button>
+<br />
+<h3>Resultat: @convertResultDistance</h3>
+
+
+<label>Konvertera kmh till mph</label><br />
+<input type="number" @bind="convertSpeed"/>
+<br /><br />
+<button @onclick="ConvertSpeed">Konvertera kmh till mph</button>
+
+<br />
+<h3>Resultat: @convertResultSpeed</h3>
+
+
+
+@code {
+
+
+    private Int32 convertDistance;
+    private Int32 convertSpeed;
+    private double convertResultDistance;
+    private double convertResultSpeed;
+
+    //function for meter to feet
+    private void ConvertDistance()
+    {
+        convertResultDistance = convertDistance * 3.2808;
+        convertResultDistance = Math.Round(convertResultDistance, 2);
+    }
+
+    //function for km/h to mph
+    private void ConvertSpeed()
+    {
+        convertResultSpeed = convertSpeed * 0.6214;
+        convertResultSpeed = Math.Round(convertResultSpeed, 2);
+    }
+
+
+
+
+}

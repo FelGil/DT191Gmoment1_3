@@ -1,0 +1,83 @@
+﻿body {
+    font-size: 1.2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#blazor-error-ui {
+    display:none;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navelement {
+    float: left;
+}
+
+.navelement a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+    .navelement a:hover {
+        background-color: #111;
+    }
+
+.content {
+    max-width: 80%;
+    background-color: aliceblue;
+    margin: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-bottom: 1em;
+    border-radius: 25px;
+    border-style: solid;
+    border-color:dimgray;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    min-width: 200px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 6px;
+    text-align: left;
+    background-color: #333;
+    color: white;
+}
+
+td {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.container {
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.componentText {
+    font-size: 0.8em;
+    font-weight: bold;
+    color:indigo;
+    text-align: center;
+}
+
+.logo {
+    width: 80px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}

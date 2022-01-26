@@ -1,0 +1,60 @@
+﻿@page "/Courses"
+@inject HttpClient Http
+
+<PageTitle>Olika  Kurser</PageTitle>
+<h3>Lite olika kurser som finns</h3>
+
+@if(tweug == null)
+{
+    <p>Lugna ner dig sidan laddar...</p>
+} else
+{
+    <div style="overflow-x: auto;">
+        <table>
+            <thead>
+                <tr>
+                    <th>Kursnamn</th>
+                    <th>Kurskod</th>
+                    <th>Kursplan</th>
+                    <th>Progression</th>
+                    <th>Termin</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var course in tweug)
+                {
+                    <tr>
+                        <td>@course.CourseName</td>
+                        <td>@course.CourseCode</td>
+                        <td><a href="@course.CoursePlan" target="_blank">Kursplan</a></td>
+                        <td>@course.Progression</td>
+                        <td>@course.Semester</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+    private Tweug[]? tweug;
+
+    protected override async Task OnInitializedAsync()
+    { 
+        tweug = await Http.GetFromJsonAsync<Tweug[]>("https://moment3.herokuapp.com/courses");
+    }
+
+    public class Tweug
+    {
+        public string? CourseName { get; set; }
+
+        public string? CourseCode { get; set; }
+
+        public string? CoursePlan { get; set; }
+
+        public string? Progression { get; set; }
+
+        public string? Semester { get; set; }
+    }
+
+}
